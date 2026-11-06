@@ -83,7 +83,7 @@ public final class FogRenderer {
         return MIN_DISTANCE + (REFERENCE_DISTANCE - MIN_DISTANCE) * (1.0F - density);
     }
 
-    private static float daylight(ClientLevel level, float partialTick) {
+    static float daylight(ClientLevel level, float partialTick) {
         // getSkyDarken: ~1.0 at noon, ~0.2 at midnight; already includes rain/thunder darkening.
         return Mth.clamp((level.getSkyDarken(partialTick) - 0.2F) / 0.8F, 0.0F, 1.0F);
     }

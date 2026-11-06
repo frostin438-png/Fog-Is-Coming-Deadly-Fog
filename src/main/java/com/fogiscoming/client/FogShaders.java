@@ -152,7 +152,9 @@ public final class FogShaders {
         s.safeGetUniform("WindParams").set(Mth.cos(windAngle) * windSpeed, 0.0F, Mth.sin(windAngle) * windSpeed, 0.045F);
 
         List<FogLightTracker.LightSource> lights = FogConfig.CLIENT.lightHalos.get() ? FogLightTracker.lights() : List.of();
-        float haloStrength = 0.9F * Math.max(0.35F, intensity);
+        // In daylight a lamp barely glows in fog; at night the same lamp lights up the fog around it.
+        float day = FogRenderer.daylight(mc.level, partial);
+        float haloStrength = 0.9F * Math.max(0.35F, intensity) * Mth.lerp(day, 1.0F, 0.25F);
         s.safeGetUniform("HaloParams").set(haloStrength, (float) lights.size(), deadly, (float) (frame++ & 1023));
         for (int i = 0; i < FogLightTracker.MAX_LIGHTS; i++) {
             if (i < lights.size()) {

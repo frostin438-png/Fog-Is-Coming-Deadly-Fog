@@ -25,7 +25,7 @@
 | License | **MIT** |
 | Source code | `https://github.com/frostin438-png/Fog-Is-Coming-Deadly-Fog` |
 | Issues | `https://github.com/frostin438-png/Fog-Is-Coming-Deadly-Fog/issues` |
-| Gallery | `docs/screenshots/`: `fog_sh_s2_day.png`, `fog_sh_s3_night_lights.png`, `fog_sh_s3_day.png`, `fog_s0_countdown.png`, `fog_s3_day_exposed.png` (первый отметьте как featured) |
+| Gallery | все файлы из `modrinth/gallery/mod/` по порядку; `01_night_cabin.jpg` отметьте как **Featured** |
 
 **Upload version**
 
@@ -53,10 +53,31 @@
 | Categories / features | Atmosphere, Shadows, Foliage, Reflections, Bloom; стиль **Semi-realistic**; производительность **Medium** |
 | License | **MIT** |
 | Source code | `https://github.com/frostin438-png/Fog-Is-Coming-Deadly-Fog` (папка `shaderpack/`) |
-| Gallery | `docs/screenshots/`: `fog_oc_s0_morning.png`, `fog_oc_s0_sunset.png`, `fog_oc_s3_day.png`, `fog_oc_s3_night.png`, `fog_oc_s1_day.png` |
+| Gallery | все файлы из `modrinth/gallery/shaderpack/` по порядку; `01_sunset_lake.jpg` отметьте как **Featured** |
 
 Версия: файл `FogIsComingShaders.zip`, номер `1.0.0`, Loaders: **Iris**, Game versions: **1.20.1**.
 В «Dependencies» можно добавить мод `fog-is-coming` как **Optional**.
+
+## Подписи к кадрам галереи (Title / Description)
+
+Мод:
+1. `01_night_cabin` — **A safe place** — Lanterns and a campfire keep the deadly fog away from the cabin.
+2. `02_countdown` — **The calm** — One day left. Somewhere a clock is ticking.
+3. `03_stage1_taiga` — **Stage I: The Arrival** — A light, cold fog creeps between the trees.
+4. `04_stage2_title` — **Stage II: The Thickening** — The world grows quiet. The distance is gone.
+5. `05_stage2_forest` — **Lost in the woods** — Dense grey fog swallows the forest.
+6. `06_stage3_village` — **Stage III: The Deadly Fog** — Even at noon the village sinks into darkness.
+7. `07_exposed_night` — **You are exposed** — A few seconds to reach the light.
+8. `08_stage3_sheltered_by_light` — **Sheltered by light** — Stay close to a lamp and the fog can't hurt you.
+
+Шейдерпак:
+1. `01_sunset_lake` — **Sunset** — Sun glint on the water and a warm sky.
+2. `02_morning_valley` — **Morning** — Soft shadows over a valley.
+3. `03_cherry_hill` — **Cherry hill** — Waving leaves and grass.
+4. `04_fog_taiga` — **The fog arrives** — With the Fog Is Coming mod: volumetric fog in a taiga.
+5. `05_fog_forest` — **Into the fog** — A dark forest disappearing into the fog.
+6. `06_deadly_fog_village` — **Deadly fog** — The sun is gone and lamps glow through the fog.
+7. `07_cabin_night` — **Night** — Warm lantern light and a soul lantern.
 
 ## 3. После отправки
 Modrinth проверяет новые проекты вручную (обычно от нескольких часов до пары дней).
