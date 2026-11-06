@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:leaves",
+    "#minecraft:climbable",
+    "minecraft:cobweb",
+    "minecraft:powder_snow"
+  ]
+}

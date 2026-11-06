@@ -1,0 +1,11 @@
+{
+  "death.attack.fogiscoming.fog": "%1$s поглотил туман",
+  "death.attack.fogiscoming.fog.player": "%1$s поглотил туман при бегстве от %2$s",
+  "subtitles.fogiscoming.wind_gust": "Ветер стонет в тумане",
+  "subtitles.fogiscoming.distant_rumble": "Вдали что-то гудит",
+  "subtitles.fogiscoming.distant_groan": "В тумане что-то движется",
+  "subtitles.fogiscoming.exposed_drone": "Туман сгущается вокруг",
+  "subtitles.fogiscoming.heartbeat": "Сердцебиение",
+  "subtitles.fogiscoming.fog_arrival": "Туман сгущается",
+  "subtitles.fogiscoming.clock": "Тикают часы"
+}

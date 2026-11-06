@@ -1,0 +1,81 @@
+{
+  "ambient.wind_gust": {
+    "subtitle": "subtitles.fogiscoming.wind_gust",
+    "sounds": [
+      {
+        "name": "fogiscoming:ambient/wind_gust1",
+        "stream": true
+      },
+      {
+        "name": "fogiscoming:ambient/wind_gust2",
+        "stream": true
+      },
+      {
+        "name": "fogiscoming:ambient/wind_gust3",
+        "stream": true
+      }
+    ]
+  },
+  "ambient.distant_rumble": {
+    "subtitle": "subtitles.fogiscoming.distant_rumble",
+    "sounds": [
+      {
+        "name": "fogiscoming:ambient/distant_rumble1",
+        "stream": true
+      },
+      {
+        "name": "fogiscoming:ambient/distant_rumble2",
+        "stream": true
+      }
+    ]
+  },
+  "ambient.distant_groan": {
+    "subtitle": "subtitles.fogiscoming.distant_groan",
+    "sounds": [
+      {
+        "name": "fogiscoming:ambient/distant_groan1",
+        "stream": true
+      },
+      {
+        "name": "fogiscoming:ambient/distant_groan2",
+        "stream": true
+      }
+    ]
+  },
+  "ambient.exposed_drone": {
+    "subtitle": "subtitles.fogiscoming.exposed_drone",
+    "sounds": [
+      {
+        "name": "fogiscoming:ambient/exposed_drone",
+        "stream": true
+      }
+    ]
+  },
+  "ambient.heartbeat": {
+    "subtitle": "subtitles.fogiscoming.heartbeat",
+    "sounds": [
+      "fogiscoming:ambient/heartbeat"
+    ]
+  },
+  "event.fog_arrival": {
+    "subtitle": "subtitles.fogiscoming.fog_arrival",
+    "sounds": [
+      {
+        "name": "fogiscoming:event/fog_arrival",
+        "stream": true
+      }
+    ]
+  },
+  "clock.tick": {
+    "subtitle": "subtitles.fogiscoming.clock",
+    "sounds": [
+      "fogiscoming:clock/tick"
+    ]
+  },
+  "clock.tock": {
+    "subtitle": "subtitles.fogiscoming.clock",
+    "sounds": [
+      "fogiscoming:clock/tock"
+    ]
+  }
+}

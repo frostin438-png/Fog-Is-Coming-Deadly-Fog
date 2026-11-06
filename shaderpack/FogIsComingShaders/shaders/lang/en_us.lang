@@ -1,0 +1,12 @@
+option.SHADOWS=Shadows
+option.SHADOW_FILTER=Shadow softness
+option.shadowMapResolution=Shadow resolution
+option.shadowDistance=Shadow distance
+option.sunPathRotation=Sun path angle
+option.WAVING_PLANTS=Waving plants
+option.WATER_WAVES=Water waves
+option.VOLUMETRIC_FOG=Volumetric fog
+option.FOG_QUALITY=Fog quality
+option.LIGHT_GLOW=Light glow
+option.FILM_GRADING=Film look in fog
+option.EXPOSURE=Brightness

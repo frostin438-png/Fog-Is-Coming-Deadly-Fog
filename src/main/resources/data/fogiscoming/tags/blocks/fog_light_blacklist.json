@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:lava",
+    "minecraft:fire",
+    "minecraft:soul_fire",
+    "minecraft:magma_block",
+    "minecraft:nether_portal",
+    "minecraft:end_portal",
+    "minecraft:end_gateway",
+    "minecraft:crying_obsidian",
+    "minecraft:sculk_catalyst",
+    "minecraft:sculk_sensor",
+    "minecraft:calibrated_sculk_sensor",
+    "minecraft:amethyst_cluster",
+    "minecraft:large_amethyst_bud",
+    "minecraft:medium_amethyst_bud",
+    "minecraft:small_amethyst_bud",
+    "minecraft:brown_mushroom",
+    "minecraft:dragon_egg",
+    "minecraft:enchanting_table",
+    "minecraft:ender_chest",
+    "minecraft:glow_lichen",
+    "minecraft:light"
+  ]
+}

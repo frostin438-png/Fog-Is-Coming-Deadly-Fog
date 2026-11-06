@@ -1,0 +1,12 @@
+option.SHADOWS=Тени
+option.SHADOW_FILTER=Мягкость теней
+option.shadowMapResolution=Разрешение теней
+option.shadowDistance=Дальность теней
+option.sunPathRotation=Наклон пути солнца
+option.WAVING_PLANTS=Колышущиеся растения
+option.WATER_WAVES=Волны на воде
+option.VOLUMETRIC_FOG=Объёмный туман
+option.FOG_QUALITY=Качество тумана
+option.LIGHT_GLOW=Свечение света
+option.FILM_GRADING=Киноэффект в тумане
+option.EXPOSURE=Яркость
