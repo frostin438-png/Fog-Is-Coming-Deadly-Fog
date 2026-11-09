@@ -9,6 +9,8 @@
 
 uniform sampler2D SceneColor;
 uniform sampler2D SceneDepth;
+// Same texture as SceneDepth normally; under a shader pack the depth with the hand (the nearer one wins).
+uniform sampler2D HandDepth;
 
 uniform mat4 InvViewProj;     // clip space -> camera-relative world space
 uniform vec3 NoiseOrigin;     // camera position, wrapped horizontally (noise space)
@@ -117,7 +119,7 @@ vec3 halo(vec4 light, vec4 color, vec3 dir, float rayLength, float k, float time
 
 void main() {
     vec3 scene = texture(SceneColor, texCoord).rgb;
-    float depth = texture(SceneDepth, texCoord).r;
+    float depth = min(texture(SceneDepth, texCoord).r, texture(HandDepth, texCoord).r);
     vec2 ndcXY = texCoord * 2.0 - 1.0;
 
     vec4 farPoint = InvViewProj * vec4(ndcXY, 0.5, 1.0);

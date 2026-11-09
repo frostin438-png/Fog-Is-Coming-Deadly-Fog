@@ -33,7 +33,7 @@ The mod has its own shaders built in, so you don't need OptiFine or Oculus. The 
 
 All the sounds are made for this mod: the ticking clock, wind, a rumble somewhere far off, something moving in the fog that you'd rather not meet.
 
-If you use shader packs through Oculus, there's a companion pack, **Fog Is Coming Shaders**, that draws this same fog its own way.
+If you use shader packs through Oculus, the fog stays: the mod draws it on top of any pack (Complementary, BSL and others). There's also a companion pack, **Fog Is Coming Shaders**, that draws this same fog its own way.
 
 ## Good to know
 
