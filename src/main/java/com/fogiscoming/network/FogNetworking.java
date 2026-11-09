@@ -9,7 +9,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 
 /** Server → client synchronisation of the fog state. The server is the single source of truth. */
 public final class FogNetworking {
-    private static final String PROTOCOL = "1";
+    private static final String PROTOCOL = "2";
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
             FogIsComing.id("main"), () -> PROTOCOL, PROTOCOL::equals, PROTOCOL::equals);
 
@@ -31,6 +31,11 @@ public final class FogNetworking {
                 .encoder(FogExposurePacket::encode)
                 .decoder(FogExposurePacket::decode)
                 .consumerMainThread(FogExposurePacket::handle)
+                .add();
+        CHANNEL.messageBuilder(FogScarePacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
+                .encoder(FogScarePacket::encode)
+                .decoder(FogScarePacket::decode)
+                .consumerMainThread(FogScarePacket::handle)
                 .add();
     }
 

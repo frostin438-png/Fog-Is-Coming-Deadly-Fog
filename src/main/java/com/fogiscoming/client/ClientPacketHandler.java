@@ -1,6 +1,7 @@
 package com.fogiscoming.client;
 
 import com.fogiscoming.network.FogExposurePacket;
+import com.fogiscoming.network.FogScarePacket;
 import com.fogiscoming.network.FogStatePacket;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -18,5 +19,9 @@ public final class ClientPacketHandler {
 
     public static void handleExposure(FogExposurePacket p) {
         ClientFogState.applyExposure(p.status(), p.secondsUntilDamage());
+    }
+
+    public static void handleScare(FogScarePacket p) {
+        FogScares.onScare(p.kind());
     }
 }

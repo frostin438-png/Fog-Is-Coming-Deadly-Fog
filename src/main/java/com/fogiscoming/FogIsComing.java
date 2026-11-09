@@ -2,6 +2,7 @@ package com.fogiscoming;
 
 import com.fogiscoming.config.FogConfig;
 import com.fogiscoming.network.FogNetworking;
+import com.fogiscoming.registry.FogEntities;
 import com.fogiscoming.registry.FogParticles;
 import com.fogiscoming.registry.FogSounds;
 import com.mojang.logging.LogUtils;
@@ -32,6 +33,8 @@ public final class FogIsComing {
 
         FogSounds.SOUNDS.register(modBus);
         FogParticles.PARTICLES.register(modBus);
+        FogEntities.ENTITIES.register(modBus);
+        modBus.addListener(FogEntities::registerAttributes);
 
         // Gameplay settings: per-world, server-authoritative (serverconfig/fogiscoming-server.toml).
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, FogConfig.SERVER_SPEC, "fogiscoming-server.toml");

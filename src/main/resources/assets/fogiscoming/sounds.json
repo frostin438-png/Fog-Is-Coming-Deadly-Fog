@@ -77,5 +77,31 @@
     "sounds": [
       "fogiscoming:clock/tock"
     ]
+  },
+  "watcher.vanish": {
+    "subtitle": "subtitles.fogiscoming.watcher_vanish",
+    "sounds": [
+      "fogiscoming:watcher/vanish"
+    ]
+  },
+  "watcher.scream": {
+    "subtitle": "subtitles.fogiscoming.watcher_scream",
+    "sounds": [
+      "fogiscoming:watcher/scream"
+    ]
+  },
+  "watcher.gaze": {
+    "subtitle": "subtitles.fogiscoming.watcher_gaze",
+    "sounds": [
+      "fogiscoming:watcher/gaze"
+    ]
+  },
+  "hallucination.whisper": {
+    "subtitle": "subtitles.fogiscoming.whisper",
+    "sounds": [
+      "fogiscoming:hallucination/whisper1",
+      "fogiscoming:hallucination/whisper2",
+      "fogiscoming:hallucination/whisper3"
+    ]
   }
 }

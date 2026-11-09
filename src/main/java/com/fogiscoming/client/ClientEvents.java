@@ -14,7 +14,10 @@ import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
+import com.fogiscoming.registry.FogEntities;
 import com.fogiscoming.registry.FogParticles;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.client.event.sound.PlaySoundEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -44,6 +47,16 @@ public final class ClientEvents {
         public static void registerShaders(RegisterShadersEvent event) {
             FogShaders.register(event);
         }
+
+        @SubscribeEvent
+        public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerEntityRenderer(FogEntities.WATCHER.get(), WatcherRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(WatcherRenderer.LAYER, WatcherRenderer::createLayer);
+        }
     }
 
     @Mod.EventBusSubscriber(modid = FogIsComing.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -60,6 +73,17 @@ public final class ClientEvents {
             FogSoundManager.tick();
             FogAtmosphere.tick();
             FogShaders.tick();
+            FogScares.tick();
+        }
+
+        @SubscribeEvent
+        public static void onCameraAngles(ViewportEvent.ComputeCameraAngles event) {
+            FogScares.onCameraAngles(event);
+        }
+
+        @SubscribeEvent
+        public static void onFov(ViewportEvent.ComputeFov event) {
+            FogScares.onFov(event);
         }
 
         @SubscribeEvent
@@ -71,6 +95,7 @@ public final class ClientEvents {
         public static void onLogout(ClientPlayerNetworkEvent.LoggingOut event) {
             ClientFogState.reset();
             FogSoundManager.reset();
+            FogScares.reset();
         }
 
         /** Thick fog swallows distant sounds: one-shot world sounds far from the listener get quieter. */

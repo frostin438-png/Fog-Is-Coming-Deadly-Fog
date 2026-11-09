@@ -7,5 +7,12 @@
   "subtitles.fogiscoming.exposed_drone": "The fog presses in",
   "subtitles.fogiscoming.heartbeat": "Heartbeat",
   "subtitles.fogiscoming.fog_arrival": "The fog thickens",
-  "subtitles.fogiscoming.clock": "A clock ticks"
+  "subtitles.fogiscoming.clock": "A clock ticks",
+  "entity.fogiscoming.watcher": "Watcher",
+  "death.attack.fogiscoming.watcher": "%1$s looked away",
+  "death.attack.fogiscoming.watcher.player": "%1$s looked away from the %2$s",
+  "subtitles.fogiscoming.watcher_vanish": "Something vanishes",
+  "subtitles.fogiscoming.watcher_scream": "Something screams",
+  "subtitles.fogiscoming.watcher_gaze": "Ringing in your ears",
+  "subtitles.fogiscoming.whisper": "Whispers"
 }

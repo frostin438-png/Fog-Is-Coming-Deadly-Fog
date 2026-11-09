@@ -15,6 +15,16 @@ The rule is simple: the fog won't touch you in **light** or **under a roof**.
 
 The moment you step out of safety, your heart starts pounding. You get a few seconds to get back. After that the fog hurts you, harder and harder, and armor does nothing.
 
+## You are not alone out there
+
+Sometimes, at the very edge of the fog, someone is standing. Too tall, too thin, pitch black, with two pale eyes. It doesn't move. It just watches you. Look straight at it and your ears start ringing, the picture crackles with static, and a moment later it dissolves into smoke.
+
+At first they only come at night. Once the fog turns deadly they come all the time, and they learn one more thing: when you are out in the open and you look away, they get closer. You will hear nothing. If one reaches you, it hurts, and you will remember it.
+
+The fog also eats light. On deadly nights torches and campfires under the open sky go out one by one with a hiss. Lanterns hold.
+
+And sometimes you will hear things that are not there: footsteps behind you that stop when you stop, a whisper right next to your ear, knocking on the door of your shelter in the middle of the night.
+
 So the first day is about getting ready: torches, a shelter, a plan for the night. After that, every trip outside becomes a small adventure.
 
 ## What it looks like
@@ -31,6 +41,7 @@ If you use shader packs through Oculus, there's a companion pack, **Fog Is Comin
 - The fog keeps its progress when you leave the world or restart the server.
 - By default only the Overworld is affected. You can hide in the Nether, but the fog will be waiting when you come back.
 - Almost everything can be changed in the config: when each stage starts, how much damage the fog does, the light radius, and the HUD, sounds and shaders.
+- The Watchers, the light-eating fog, the hallucinations and the camera shake can each be turned off in the config if they are too much.
 - Server admins have `/fog`, which lets you set a stage, skip days ahead or reset progress, and see why a player is or isn't protected.
 
 Minecraft 1.20.1 · Forge 47.x · [Source code and bug reports](https://github.com/frostin438-png/Fog-Is-Coming-Deadly-Fog)
@@ -46,5 +57,7 @@ Minecraft 1.20.1 · Forge 47.x · [Source code and bug reports](https://github.c
 Потом приходит туман. Сначала это лёгкая дымка над деревьями, даже красиво. Через несколько дней — густая серая стена, звуки мира глохнут и отдаляются. На восьмой день туман темнеет, начинает «дышать» и убивать. И больше уже не уходит.
 
 Спасают только **свет** и **крыша над головой**. Встаньте у факела, фонаря или костра, а лучше постройте настоящий закрытый дом. Солнце не поможет, яма с блоком сверху тоже. Стоит выйти из безопасного места, как начинает колотиться сердце: у вас несколько секунд, а дальше туман бьёт всё сильнее, и броня не спасает.
+
+В тумане вы не одни. На самом краю видимости иногда стоит кто-то: слишком высокий, слишком худой, чёрный, с двумя бледными глазами. Посмотрите на него в упор, и в ушах зазвенит, по экрану пойдут помехи, а он растворится в дыму. Когда туман становится смертельным, Наблюдатели приходят всё чаще и подбираются ближе каждый раз, когда вы отворачиваетесь. Ночью туман гасит факелы и костры под открытым небом, а вы слышите шаги за спиной, шёпот у самого уха и стук в дверь убежища.
 
 Внутри мода есть свои шейдеры: объёмный туман клубами, тёплые ореолы у факелов и холодная плёночная картинка в густом тумане. Все звуки сделаны специально для мода. Мод работает в одиночной игре и на серверах (нужен и на сервере, и у игроков). Почти всё настраивается в конфиге.

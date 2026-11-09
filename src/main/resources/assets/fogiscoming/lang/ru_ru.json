@@ -7,5 +7,12 @@
   "subtitles.fogiscoming.exposed_drone": "Туман сгущается вокруг",
   "subtitles.fogiscoming.heartbeat": "Сердцебиение",
   "subtitles.fogiscoming.fog_arrival": "Туман сгущается",
-  "subtitles.fogiscoming.clock": "Тикают часы"
+  "subtitles.fogiscoming.clock": "Тикают часы",
+  "entity.fogiscoming.watcher": "Наблюдатель",
+  "death.attack.fogiscoming.watcher": "%1$s отвёл взгляд",
+  "death.attack.fogiscoming.watcher.player": "%1$s отвёл взгляд, и %2$s оказался рядом",
+  "subtitles.fogiscoming.watcher_vanish": "Что-то исчезает",
+  "subtitles.fogiscoming.watcher_scream": "Что-то кричит",
+  "subtitles.fogiscoming.watcher_gaze": "Звон в ушах",
+  "subtitles.fogiscoming.whisper": "Шёпот"
 }

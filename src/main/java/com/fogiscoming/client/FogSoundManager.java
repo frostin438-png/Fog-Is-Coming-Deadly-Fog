@@ -32,6 +32,8 @@ public final class FogSoundManager {
     private static SoundInstance lastWind, lastRumble, lastGroan;
     private static DroneSound drone;
     private static boolean clockTock;
+    /** Client tick of the last heartbeat (drives the pulsing vignette). */
+    static long lastHeartbeatTick = Long.MIN_VALUE / 2;
 
     private FogSoundManager() {
     }
@@ -72,7 +74,8 @@ public final class FogSoundManager {
         ExposureStatus ex = ClientFogState.exposure();
         if (ex.isUnsafe() && --heartbeatCooldown <= 0) {
             mc.getSoundManager().play(SimpleSoundInstance.forUI(FogSounds.HEARTBEAT.get(), 1.0F, 0.5F * vol));
-            heartbeatCooldown = ex == ExposureStatus.EXPOSED ? 22 : 30;
+            heartbeatCooldown = ex == ExposureStatus.EXPOSED ? 16 : 26;
+            lastHeartbeatTick = ClientFogState.clientTicks;
         }
     }
 

@@ -19,6 +19,10 @@ public final class FogSounds {
     public static final RegistryObject<SoundEvent> FOG_ARRIVAL = register("event.fog_arrival");
     public static final RegistryObject<SoundEvent> CLOCK_TICK = register("clock.tick");
     public static final RegistryObject<SoundEvent> CLOCK_TOCK = register("clock.tock");
+    public static final RegistryObject<SoundEvent> WATCHER_VANISH = register("watcher.vanish");
+    public static final RegistryObject<SoundEvent> WATCHER_SCREAM = register("watcher.scream");
+    public static final RegistryObject<SoundEvent> WATCHER_GAZE = register("watcher.gaze");
+    public static final RegistryObject<SoundEvent> WHISPER = register("hallucination.whisper");
 
     private FogSounds() {
     }

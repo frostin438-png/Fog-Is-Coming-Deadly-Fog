@@ -20,6 +20,9 @@ public final class FogTags {
     /** Damage type defined in data/fogiscoming/damage_type/fog.json. */
     public static final ResourceKey<DamageType> FOG_DAMAGE =
             ResourceKey.create(Registries.DAMAGE_TYPE, FogIsComing.id("fog"));
+    /** Damage type of a Watcher reaching the player (data/fogiscoming/damage_type/watcher.json). */
+    public static final ResourceKey<DamageType> WATCHER_DAMAGE =
+            ResourceKey.create(Registries.DAMAGE_TYPE, FogIsComing.id("watcher"));
 
     private FogTags() {
     }

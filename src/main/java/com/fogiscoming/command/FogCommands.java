@@ -6,6 +6,10 @@ import com.fogiscoming.protection.ShelterDetector;
 import com.fogiscoming.world.FogStage;
 import com.fogiscoming.world.FogStageManager;
 import com.fogiscoming.world.FogWorldData;
+import com.fogiscoming.world.LightEater;
+import com.fogiscoming.world.WatcherDirector;
+import com.fogiscoming.network.FogNetworking;
+import com.fogiscoming.network.FogScarePacket;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
@@ -18,7 +22,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 
 /**
- * {@code /fog status | setstage <0-3> | auto | reset | skipdays <days> | debug | selftest}.
+ * {@code /fog status | setstage <0-3> | auto | reset | skipdays <days> | watcher [distance] | scare | eatlight | debug | selftest}.
  * Everything except {@code status} requires permission level 2 (operators / cheats enabled).
  */
 public final class FogCommands {
@@ -36,8 +40,40 @@ public final class FogCommands {
                 .then(Commands.literal("skipdays").requires(s -> s.hasPermission(2))
                         .then(Commands.argument("days", DoubleArgumentType.doubleArg(0.0, 1000.0))
                                 .executes(ctx -> skipDays(ctx, DoubleArgumentType.getDouble(ctx, "days")))))
+                .then(Commands.literal("watcher").requires(s -> s.hasPermission(2))
+                        .executes(ctx -> watcher(ctx, -1))
+                        .then(Commands.argument("distance", DoubleArgumentType.doubleArg(2.0, 64.0))
+                                .executes(ctx -> watcher(ctx, DoubleArgumentType.getDouble(ctx, "distance")))))
+                .then(Commands.literal("scare").requires(s -> s.hasPermission(2)).executes(FogCommands::scare))
+                .then(Commands.literal("eatlight").requires(s -> s.hasPermission(2)).executes(FogCommands::eatLight))
                 .then(Commands.literal("debug").requires(s -> s.hasPermission(2)).executes(FogCommands::debug))
                 .then(Commands.literal("selftest").requires(s -> s.hasPermission(2)).executes(ctx -> FogSelfTest.start(ctx.getSource()))));
+    }
+
+    private static int watcher(CommandContext<CommandSourceStack> ctx, double distance) throws com.mojang.brigadier.exceptions.CommandSyntaxException {
+        ServerPlayer player = ctx.getSource().getPlayerOrException();
+        var w = WatcherDirector.spawnFor(player, distance);
+        if (w == null) {
+            ctx.getSource().sendFailure(Component.literal("No dark open ground found for a Watcher here."));
+            return 0;
+        }
+        ctx.getSource().sendSuccess(() -> Component.literal("A Watcher is standing in the fog. It needs Stage II or III to stay.")
+                .withStyle(ChatFormatting.DARK_GRAY), false);
+        return 1;
+    }
+
+    private static int scare(CommandContext<CommandSourceStack> ctx) throws com.mojang.brigadier.exceptions.CommandSyntaxException {
+        ServerPlayer player = ctx.getSource().getPlayerOrException();
+        FogNetworking.sendTo(player, new FogScarePacket(FogScarePacket.JUMPSCARE));
+        return 1;
+    }
+
+    private static int eatLight(CommandContext<CommandSourceStack> ctx) throws com.mojang.brigadier.exceptions.CommandSyntaxException {
+        ServerPlayer player = ctx.getSource().getPlayerOrException();
+        boolean ate = LightEater.eatOne(player.serverLevel(), player.blockPosition());
+        ctx.getSource().sendSuccess(() -> Component.literal(ate ? "The fog ate a light." : "No outdoor torch or campfire nearby.")
+                .withStyle(ChatFormatting.DARK_GRAY), false);
+        return ate ? 1 : 0;
     }
 
     private static int status(CommandContext<CommandSourceStack> ctx) {

@@ -63,6 +63,13 @@ public final class FogConfig {
         public final ForgeConfigSpec.IntValue shelterMinFootprint;
         public final ForgeConfigSpec.IntValue shelterLeakTolerance;
 
+        // --- horror ---
+        public final ForgeConfigSpec.BooleanValue watchersEnabled;
+        public final ForgeConfigSpec.BooleanValue watcherAttacks;
+        public final ForgeConfigSpec.DoubleValue watcherDamage;
+        public final ForgeConfigSpec.DoubleValue watcherFrequency;
+        public final ForgeConfigSpec.BooleanValue fogEatsLight;
+
         Server(ForgeConfigSpec.Builder b) {
             b.comment("Fog progression. One Minecraft day = 24000 ticks. Values are in elapsed in-game days",
                             "counted from world creation (or from the last /fog reset). Sleeping and /time add count, /time set backwards does not.")
@@ -126,6 +133,21 @@ public final class FogConfig {
                             "0 = any hole to the outside breaks protection.")
                     .defineInRange("shelterLeakTolerance", 0, 0, 16);
             b.pop();
+
+            b.comment("Things in the fog.").push("horror");
+            watchersEnabled = b.comment("Watchers: tall dark figures standing at the edge of the fog (Stage II at night, Stage III always).",
+                            "They vanish when stared at or approached and never enter the light.")
+                    .define("watchersEnabled", true);
+            watcherAttacks = b.comment("In Stage III a Watcher closes in on an exposed player whenever they look away.")
+                    .define("watcherAttacks", true);
+            watcherDamage = b.comment("Damage dealt when a Watcher reaches a player (ignores armor).")
+                    .defineInRange("watcherDamage", 8.0, 0.0, 1000.0);
+            watcherFrequency = b.comment("How often Watchers appear (1.0 = default, 2.0 = twice as often, 0.5 = half).")
+                    .defineInRange("watcherFrequency", 1.0, 0.05, 10.0);
+            fogEatsLight = b.comment("At night in Stage III the fog now and then snuffs out torches and campfires under the open sky",
+                            "near a player. Lanterns and other light blocks are never touched.")
+                    .define("fogEatsLight", true);
+            b.pop();
         }
     }
 
@@ -142,6 +164,8 @@ public final class FogConfig {
         public final ForgeConfigSpec.EnumValue<ShaderQuality> shaderQuality;
         public final ForgeConfigSpec.BooleanValue lightHalos;
         public final ForgeConfigSpec.BooleanValue cinematicGrading;
+        public final ForgeConfigSpec.BooleanValue hallucinations;
+        public final ForgeConfigSpec.BooleanValue cameraShake;
 
         Client(ForgeConfigSpec.Builder b) {
             b.push("client");
@@ -170,6 +194,10 @@ public final class FogConfig {
                     .define("lightHalos", true);
             cinematicGrading = b.comment("Cold, slightly desaturated film look with grain and vignette in thick fog (needs shaderFog).")
                     .define("cinematicGrading", true);
+            hallucinations = b.comment("Sounds that are not really there: footsteps behind you, whispers, knocking on the door at night.")
+                    .define("hallucinations", true);
+            cameraShake = b.comment("Camera shake while exposed to the deadly fog and when something reaches you.")
+                    .define("cameraShake", true);
             b.pop();
         }
     }

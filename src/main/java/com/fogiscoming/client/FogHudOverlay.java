@@ -36,7 +36,9 @@ public final class FogHudOverlay implements IGuiOverlay {
     @Override
     public void render(ForgeGui gui, GuiGraphics g, float partialTick, int width, int height) {
         Minecraft mc = Minecraft.getInstance();
-        if (mc.options.hideGui || mc.player == null || !ClientFogState.isInitialized()) return;
+        if (mc.player == null) return;
+        FogScares.renderOverlay(g, partialTick, width, height);
+        if (mc.options.hideGui || !ClientFogState.isInitialized()) return;
 
         renderExposureVignette(g, partialTick, width, height);
         if (!FogConfig.CLIENT.hudEnabled.get()) return;
@@ -139,13 +141,17 @@ public final class FogHudOverlay implements IGuiOverlay {
     private void renderExposureVignette(GuiGraphics g, float partialTick, int width, int height) {
         float e = ClientFogState.exposureBlend(partialTick) * FogConfig.CLIENT.effectsIntensity.get().floatValue();
         if (e <= 0.01F) return;
-        float v = Mth.clamp(e * 0.85F, 0.0F, 1.0F);
+        // Pulses with the heartbeat; the edges bleed red once the fog starts to hurt.
+        float sinceBeat = ClientFogState.clientTicks + partialTick - FogSoundManager.lastHeartbeatTick;
+        float pulse = sinceBeat >= 0 ? (float) Math.exp(-sinceBeat / 4.0F) : 0.0F;
+        float v = Mth.clamp(e * (0.9F + 0.25F * pulse), 0.0F, 1.0F);
+        float red = ClientFogState.exposure() == ExposureStatus.EXPOSED ? 0.55F + 0.3F * pulse : 0.0F;
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
         RenderSystem.enableBlend();
         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ZERO, GlStateManager.DestFactor.ONE_MINUS_SRC_COLOR,
                 GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-        g.setColor(v, v, v, 1.0F);
+        g.setColor(v * (1.0F - red), v, v, 1.0F);
         g.blit(VIGNETTE, 0, 0, -90, 0.0F, 0.0F, width, height, width, height);
         g.setColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.defaultBlendFunc();
