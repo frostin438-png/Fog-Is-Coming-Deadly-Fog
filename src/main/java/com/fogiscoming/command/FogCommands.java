@@ -7,6 +7,7 @@ import com.fogiscoming.world.FogStage;
 import com.fogiscoming.world.FogStageManager;
 import com.fogiscoming.world.FogWorldData;
 import com.fogiscoming.world.LightEater;
+import com.fogiscoming.world.LightStalkerDirector;
 import com.fogiscoming.world.WatcherDirector;
 import com.fogiscoming.network.FogNetworking;
 import com.fogiscoming.network.FogScarePacket;
@@ -22,7 +23,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 
 /**
- * {@code /fog status | setstage <0-3> | auto | reset | skipdays <days> | watcher [distance] | scare | eatlight | debug | selftest}.
+ * {@code /fog status | setstage <0-3> | auto | reset | skipdays <days> | watcher [distance] | stalker [distance] | scare | eatlight | debug | selftest}.
  * Everything except {@code status} requires permission level 2 (operators / cheats enabled).
  */
 public final class FogCommands {
@@ -44,6 +45,10 @@ public final class FogCommands {
                         .executes(ctx -> watcher(ctx, -1))
                         .then(Commands.argument("distance", DoubleArgumentType.doubleArg(2.0, 64.0))
                                 .executes(ctx -> watcher(ctx, DoubleArgumentType.getDouble(ctx, "distance")))))
+                .then(Commands.literal("stalker").requires(s -> s.hasPermission(2))
+                        .executes(ctx -> stalker(ctx, -1))
+                        .then(Commands.argument("distance", DoubleArgumentType.doubleArg(2.0, 64.0))
+                                .executes(ctx -> stalker(ctx, DoubleArgumentType.getDouble(ctx, "distance")))))
                 .then(Commands.literal("scare").requires(s -> s.hasPermission(2)).executes(FogCommands::scare))
                 .then(Commands.literal("eatlight").requires(s -> s.hasPermission(2)).executes(FogCommands::eatLight))
                 .then(Commands.literal("debug").requires(s -> s.hasPermission(2)).executes(FogCommands::debug))
@@ -58,6 +63,18 @@ public final class FogCommands {
             return 0;
         }
         ctx.getSource().sendSuccess(() -> Component.literal("A Watcher is standing in the fog. It needs Stage II or III to stay.")
+                .withStyle(ChatFormatting.DARK_GRAY), false);
+        return 1;
+    }
+
+    private static int stalker(CommandContext<CommandSourceStack> ctx, double distance) throws com.mojang.brigadier.exceptions.CommandSyntaxException {
+        ServerPlayer player = ctx.getSource().getPlayerOrException();
+        var s = LightStalkerDirector.spawnFor(player, distance);
+        if (s == null) {
+            ctx.getSource().sendFailure(Component.literal("No open ground found for a Light Stalker here."));
+            return 0;
+        }
+        ctx.getSource().sendSuccess(() -> Component.literal("A Light Stalker is coming for the light. It needs Stage II or III to stay.")
                 .withStyle(ChatFormatting.DARK_GRAY), false);
         return 1;
     }

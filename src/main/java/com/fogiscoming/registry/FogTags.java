@@ -16,6 +16,8 @@ public final class FogTags {
     public static final TagKey<Block> LIGHT_BLACKLIST = BlockTags.create(FogIsComing.id("fog_light_blacklist"));
     /** Blocks with collision that the fog still passes through (leaves, ladders...). */
     public static final TagKey<Block> FOG_PERMEABLE = BlockTags.create(FogIsComing.id("fog_permeable"));
+    /** Light blocks a Light Stalker takes away (torches and lanterns by default). */
+    public static final TagKey<Block> STALKER_TARGETS = BlockTags.create(FogIsComing.id("stalker_targets"));
 
     /** Damage type defined in data/fogiscoming/damage_type/fog.json. */
     public static final ResourceKey<DamageType> FOG_DAMAGE =

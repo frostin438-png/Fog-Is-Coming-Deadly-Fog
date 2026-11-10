@@ -103,5 +103,30 @@
       "fogiscoming:hallucination/whisper2",
       "fogiscoming:hallucination/whisper3"
     ]
+  },
+  "stalker.ambient": {
+    "subtitle": "subtitles.fogiscoming.stalker_ambient",
+    "sounds": [
+      "fogiscoming:stalker/ambient1",
+      "fogiscoming:stalker/ambient2"
+    ]
+  },
+  "stalker.steal": {
+    "subtitle": "subtitles.fogiscoming.stalker_steal",
+    "sounds": [
+      "fogiscoming:stalker/steal"
+    ]
+  },
+  "stalker.hurt": {
+    "subtitle": "subtitles.fogiscoming.stalker_hurt",
+    "sounds": [
+      "fogiscoming:stalker/hurt"
+    ]
+  },
+  "stalker.death": {
+    "subtitle": "subtitles.fogiscoming.stalker_death",
+    "sounds": [
+      "fogiscoming:stalker/death"
+    ]
   }
 }

@@ -69,6 +69,10 @@ public final class FogConfig {
         public final ForgeConfigSpec.DoubleValue watcherDamage;
         public final ForgeConfigSpec.DoubleValue watcherFrequency;
         public final ForgeConfigSpec.BooleanValue fogEatsLight;
+        public final ForgeConfigSpec.BooleanValue stalkersEnabled;
+        public final ForgeConfigSpec.BooleanValue stalkerBreaksDoors;
+        public final ForgeConfigSpec.IntValue stalkerMaxLights;
+        public final ForgeConfigSpec.DoubleValue stalkerFrequency;
 
         Server(ForgeConfigSpec.Builder b) {
             b.comment("Fog progression. One Minecraft day = 24000 ticks. Values are in elapsed in-game days",
@@ -147,6 +151,15 @@ public final class FogConfig {
             fogEatsLight = b.comment("At night in Stage III the fog now and then snuffs out torches and campfires under the open sky",
                             "near a player. Lanterns and other light blocks are never touched.")
                     .define("fogEatsLight", true);
+            stalkersEnabled = b.comment("Light Stalkers: from Stage II on they come out of the fog, take torches and lanterns",
+                            "(block tag fogiscoming:stalker_targets) and carry them away. Killing one drops what it took.")
+                    .define("stalkersEnabled", true);
+            stalkerBreaksDoors = b.comment("Light Stalkers break wooden doors that are in their way (iron doors always hold).")
+                    .define("stalkerBreaksDoors", true);
+            stalkerMaxLights = b.comment("How many lights one Light Stalker takes before it leaves.")
+                    .defineInRange("stalkerMaxLights", 3, 1, 64);
+            stalkerFrequency = b.comment("How often Light Stalkers come (1.0 = default, 2.0 = twice as often, 0.5 = half).")
+                    .defineInRange("stalkerFrequency", 1.0, 0.05, 10.0);
             b.pop();
         }
     }

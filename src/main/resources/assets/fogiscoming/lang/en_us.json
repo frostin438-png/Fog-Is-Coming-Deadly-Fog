@@ -14,5 +14,10 @@
   "subtitles.fogiscoming.watcher_vanish": "Something vanishes",
   "subtitles.fogiscoming.watcher_scream": "Something screams",
   "subtitles.fogiscoming.watcher_gaze": "Ringing in your ears",
-  "subtitles.fogiscoming.whisper": "Whispers"
+  "subtitles.fogiscoming.whisper": "Whispers",
+  "entity.fogiscoming.light_stalker": "Light Stalker",
+  "subtitles.fogiscoming.stalker_ambient": "Light Stalker breathes",
+  "subtitles.fogiscoming.stalker_steal": "A light is taken",
+  "subtitles.fogiscoming.stalker_hurt": "Light Stalker hisses",
+  "subtitles.fogiscoming.stalker_death": "Light Stalker dies"
 }

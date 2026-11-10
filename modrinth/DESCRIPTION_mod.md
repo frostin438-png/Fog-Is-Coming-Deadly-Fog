@@ -21,6 +21,8 @@ Sometimes, at the very edge of the fog, someone is standing. Too tall, too thin,
 
 At first they only come at night. Once the fog turns deadly they come all the time, and they learn one more thing: when you are out in the open and you look away, they get closer. You will hear nothing. If one reaches you, it hurts, and you will remember it.
 
+Then there is the Light Stalker. Hunched, ash-grey, arms down to its knees, two ember eyes. It doesn't want you. It wants your light. From the second stage on it walks out of the fog, plucks the nearest torch or lantern and carries it away. An open doorway doesn't stop it, and neither does a wooden door: it breaks it down, and a broken door is a hole in your shelter. Kill it before it gets back into the fog and it drops everything it took. Or fit an iron door.
+
 The fog also eats light. On deadly nights torches and campfires under the open sky go out one by one with a hiss. Lanterns hold.
 
 And sometimes you will hear things that are not there: footsteps behind you that stop when you stop, a whisper right next to your ear, knocking on the door of your shelter in the middle of the night.
@@ -41,7 +43,7 @@ If you use shader packs through Oculus, the fog stays: the mod draws it on top o
 - The fog keeps its progress when you leave the world or restart the server.
 - By default only the Overworld is affected. You can hide in the Nether, but the fog will be waiting when you come back.
 - Almost everything can be changed in the config: when each stage starts, how much damage the fog does, the light radius, and the HUD, sounds and shaders.
-- The Watchers, the light-eating fog, the hallucinations and the camera shake can each be turned off in the config if they are too much.
+- The Watchers, the Light Stalkers, the light-eating fog, the hallucinations and the camera shake can each be turned off in the config if they are too much.
 - Server admins have `/fog`, which lets you set a stage, skip days ahead or reset progress, and see why a player is or isn't protected.
 
 Minecraft 1.20.1 · Forge 47.x · [Source code and bug reports](https://github.com/frostin438-png/Fog-Is-Coming-Deadly-Fog)
@@ -58,6 +60,6 @@ Minecraft 1.20.1 · Forge 47.x · [Source code and bug reports](https://github.c
 
 Спасают только **свет** и **крыша над головой**. Встаньте у факела, фонаря или костра, а лучше постройте настоящий закрытый дом. Солнце не поможет, яма с блоком сверху тоже. Стоит выйти из безопасного места, как начинает колотиться сердце: у вас несколько секунд, а дальше туман бьёт всё сильнее, и броня не спасает.
 
-В тумане вы не одни. На самом краю видимости иногда стоит кто-то: слишком высокий, слишком худой, чёрный, с двумя бледными глазами. Посмотрите на него в упор, и в ушах зазвенит, по экрану пойдут помехи, а он растворится в дыму. Когда туман становится смертельным, Наблюдатели приходят всё чаще и подбираются ближе каждый раз, когда вы отворачиваетесь. Ночью туман гасит факелы и костры под открытым небом, а вы слышите шаги за спиной, шёпот у самого уха и стук в дверь убежища.
+В тумане вы не одни. На самом краю видимости иногда стоит кто-то: слишком высокий, слишком худой, чёрный, с двумя бледными глазами. Посмотрите на него в упор, и в ушах зазвенит, по экрану пойдут помехи, а он растворится в дыму. Когда туман становится смертельным, Наблюдатели приходят всё чаще и подбираются ближе каждый раз, когда вы отворачиваетесь. Со второй стадии из тумана выходит Похититель света: сгорбленный, с руками до колен и глазами-угольками. Ему нужны не вы, а ваш свет. Он срывает факелы и фонари и уносит их, а если на пути деревянная дверь — выламывает её. Убьёте его раньше, чем он уйдёт в туман, — всё украденное выпадет. Ночью туман гасит факелы и костры под открытым небом, а вы слышите шаги за спиной, шёпот у самого уха и стук в дверь убежища.
 
 Внутри мода есть свои шейдеры: объёмный туман клубами, тёплые ореолы у факелов и холодная плёночная картинка в густом тумане. Все звуки сделаны специально для мода. Мод работает в одиночной игре и на серверах (нужен и на сервере, и у игроков). Почти всё настраивается в конфиге.

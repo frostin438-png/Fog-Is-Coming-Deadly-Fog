@@ -7,6 +7,7 @@ import com.fogiscoming.damage.FogDamageHandler;
 import com.fogiscoming.protection.ShelterDetector;
 import com.fogiscoming.world.FogStageManager;
 import com.fogiscoming.world.LightEater;
+import com.fogiscoming.world.LightStalkerDirector;
 import com.fogiscoming.world.WatcherDirector;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.Level;
@@ -30,6 +31,7 @@ public final class CommonEvents {
     public static void onServerStarted(ServerStartedEvent event) {
         FogDamageHandler.clear();
         WatcherDirector.clear();
+        LightStalkerDirector.clear();
         LightEater.clear();
         FogStageManager.onServerStarted(event.getServer());
     }
@@ -45,6 +47,7 @@ public final class CommonEvents {
         FogStageManager.tick(event.getServer());
         FogDamageHandler.tick(event.getServer());
         WatcherDirector.tick(event.getServer());
+        LightStalkerDirector.tick(event.getServer());
         LightEater.tick(event.getServer());
         FogSelfTest.tick(event.getServer());
     }
@@ -66,6 +69,7 @@ public final class CommonEvents {
     public static void onLogout(PlayerEvent.PlayerLoggedOutEvent event) {
         FogDamageHandler.forget(event.getEntity().getUUID());
         WatcherDirector.forget(event.getEntity().getUUID());
+        LightStalkerDirector.forget(event.getEntity().getUUID());
         LightEater.forget(event.getEntity().getUUID());
     }
 

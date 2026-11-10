@@ -14,5 +14,10 @@
   "subtitles.fogiscoming.watcher_vanish": "Что-то исчезает",
   "subtitles.fogiscoming.watcher_scream": "Что-то кричит",
   "subtitles.fogiscoming.watcher_gaze": "Звон в ушах",
-  "subtitles.fogiscoming.whisper": "Шёпот"
+  "subtitles.fogiscoming.whisper": "Шёпот",
+  "entity.fogiscoming.light_stalker": "Похититель света",
+  "subtitles.fogiscoming.stalker_ambient": "Похититель света дышит",
+  "subtitles.fogiscoming.stalker_steal": "Свет украден",
+  "subtitles.fogiscoming.stalker_hurt": "Похититель света шипит",
+  "subtitles.fogiscoming.stalker_death": "Похититель света умирает"
 }

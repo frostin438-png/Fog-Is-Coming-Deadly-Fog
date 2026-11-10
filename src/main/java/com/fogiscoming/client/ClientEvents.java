@@ -51,11 +51,13 @@ public final class ClientEvents {
         @SubscribeEvent
         public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
             event.registerEntityRenderer(FogEntities.WATCHER.get(), WatcherRenderer::new);
+            event.registerEntityRenderer(FogEntities.LIGHT_STALKER.get(), LightStalkerRenderer::new);
         }
 
         @SubscribeEvent
         public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(WatcherRenderer.LAYER, WatcherRenderer::createLayer);
+            event.registerLayerDefinition(LightStalkerRenderer.LAYER, LightStalkerRenderer::createLayer);
         }
     }
 
